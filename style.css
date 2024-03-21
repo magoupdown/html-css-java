@@ -26,6 +26,9 @@ body, html {
 
 #playButton:hover {
     background-color: #e84149; /* Um vermelho um pouco mais escuro ao passar o mouse */
+}
+
+#playButton:active {
     box-shadow: 0 2px #b22; /* Sombra menor para dar a sensação de que o botão está sendo pressionado */
-    transform: translateY(2px); /* Move o botão um pouco para baixo ao passar o mouse */
+    transform: translateY(2px); /* Move o botão um pouco para baixo quando clicado */
 }
