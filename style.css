@@ -1,9 +1,31 @@
-document.getElementById('playButton').addEventListener('click', function() {
-    var audioPlayer = document.getElementById('audioPlayer');
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-    } else {
-        audioPlayer.pause();
-        audioPlayer.currentTime = 0; // Opcional: recomeça o áudio do início se clicar de novo.
-    }
-});
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282c34;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+#playButton {
+    background-color: #ff4b5a; /* Cor vermelha */
+    color: white;
+    padding: 20px; /* Torna o botão maior */
+    border: none;
+    border-radius: 50%; /* Arredonda as bordas para formar um círculo */
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px #c33; /* Sombra para dar o efeito de relevo */
+    transition: background-color 0.3s, box-shadow 0.2s, transform 0.2s;
+}
+
+#playButton:hover {
+    background-color: #e84149; /* Um vermelho um pouco mais escuro ao passar o mouse */
+    box-shadow: 0 2px #b22; /* Sombra menor para dar a sensação de que o botão está sendo pressionado */
+    transform: translateY(2px); /* Move o botão um pouco para baixo ao passar o mouse */
+}
