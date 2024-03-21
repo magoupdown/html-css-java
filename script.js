@@ -1,35 +1,28 @@
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const slide = document.querySelector('.carousel-slide');
-let images = document.querySelectorAll('img');
-let counter = 1;
-const size = images[0].clientWidth;
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282c34;
+    font-family: Arial, sans-serif;
+}
 
-slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+.container {
+    text-align: center;
+}
 
-nextBtn.addEventListener('click', () => {
-    if (counter >= images.length - 1) return;
-    slide.style.transition = "transform 0.4s ease-in-out";
-    counter++;
-    slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
+#playButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
 
-prevBtn.addEventListener('click', () => {
-    if (counter <= 0) return;
-    slide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-slide.addEventListener('transitionend', () => {
-    if (images[counter].id === 'lastClone') {
-        slide.style.transition = "none";
-        counter = images.length - 2;
-        slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-    if (images[counter].id === 'firstClone') {
-        slide.style.transition = "none";
-        counter = images.length - counter;
-        slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-});
+#playButton:hover {
+    background-color: #45a049;
+}
